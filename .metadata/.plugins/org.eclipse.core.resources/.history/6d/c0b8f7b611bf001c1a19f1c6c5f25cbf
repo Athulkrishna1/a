@@ -1,0 +1,22 @@
+package p2;
+import java.util.*;
+import java.io.*;
+public class Clock extends Thread{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int ss=0,mm=0,hh=0;
+		for(ss=0;ss<=1000;ss++) {
+			if(ss==60) {
+				mm+=1;
+			}
+			if(mm==60) {
+				hh+=1;
+			}
+			System.out.println(hh +" "+ mm +" "+ss);
+		}
+		
+
+	}
+
+}

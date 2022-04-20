@@ -1,0 +1,54 @@
+import java.sql.*;
+import java.util.*;
+public class DBinsert {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/athul","root","Pass@123");
+//			Statement stmt =con.createStatement();
+//			stmt.execute("insert into emp values(12,'darshan',30000,25,'dev','sfafk61')");
+			PreparedStatement ps =con.prepareStatement("update emp set name=? where id=?)");
+			Scanner sc = new Scanner(System.in);
+			
+			System.out.println("Enter ID: ");
+			int id=sc.nextInt();
+			
+			System.out.println("Enter Name: ");
+			String name=sc.next();
+//			
+//			System.out.println("Enter Salary: ");
+//			int salary=sc.nextInt();
+//			
+//			System.out.println("Enter Age: ");
+//			int age=sc.nextInt();
+//			
+//			System.out.println("Enter Designation: ");
+//			String desig=sc.next();
+//			
+//			System.out.println("Enter Pan: ");
+//			String pan=sc.next();
+			
+			ps.setInt(1, id);
+			ps.setString(2, name);
+//			ps.setInt(3, salary);
+//			ps.setInt(4, age);
+//			ps.setString(5, desig);
+//			ps.setString(6, pan);
+			ps.execute();
+			
+			
+			System.out.println("done");
+			con.close();
+		}
+		catch (Exception e) {
+			System.out.println(e);
+		}
+
+	}
+
+}
+//Class.forname("driver");
+//Connection con =DriverManager.getConnection("location","username","password");
+//Statement st=con.createStatement();

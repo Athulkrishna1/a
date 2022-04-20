@@ -1,0 +1,25 @@
+package p2;
+import java.util.*;
+import java.io.*;
+
+class A {
+
+	void abc() {
+		for(int i=0;i<=20;i++) {
+			if(i==15) throw new NullPointException();
+			System.out.println("i"+ i);
+		}
+	}
+}
+public class D{
+	public static void main(String[] args) {
+		try {
+			A a =new A();
+			a.abc();
+			
+		}
+		catch(NullPointException npe) {
+			System.out.println("NullPointException ");
+		}
+	}
+}

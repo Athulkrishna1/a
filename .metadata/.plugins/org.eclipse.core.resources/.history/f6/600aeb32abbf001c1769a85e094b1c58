@@ -1,0 +1,20 @@
+package p2;
+import java.text.DateFormat;
+import java.util.*;
+
+public class Array {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ArrayList a1= new ArrayList();
+		LinkedList r=new LinkedList();
+		r.add("athul");
+		r.add(new Date());
+		a1.add(100);
+		a1.add("athul");
+		a1.set(2, 3);
+		System.out.println(a1);
+
+	}
+
+}
